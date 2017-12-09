@@ -7,6 +7,8 @@
 
     <!-- dependencies -->
     <script src="bower_components/jquery/dist/jquery.js"></script>
+    <script src="bower_components/underscore/underscore.js"></script>
+    
     <script>
       // YOU DO NOT NEED TO EDIT THIS CODE
       if (!/(&|\?)username=/.test(window.location.search)) {
@@ -16,17 +18,36 @@
         }
         newSearch += 'username=' + (prompt('What is your name?') || 'anonymous');
         window.location.search = newSearch;
+        console.log(window.location.search);
       }
     </script>
     <!-- your scripts -->
     <script src="env/config.js"></script>
     <script src="scripts/app.js"></script>
+    
   </head>
   <body>
     <div id="main">
       <h1>chatterbox</h1>
-      <!-- Your HTML goes here! -->
+      <div>
+        <form id="messageBox">
+          Write your message here:<br>
+          <input type="text" name="message" class="msg"><br>
+          <button type="button" id="submit">Post Message</button>
+
+        </form>
+      </div>
+      <div>
+        
+      </div>
+    </div>
+    <div>
+      <button type="button" id="clear">Clear ChatLog</button>
     </div>
     <div id="chats"></div>
+    
+
+
+
   </body>
 </html>
